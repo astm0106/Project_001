@@ -8,7 +8,7 @@ var dataSample = {
     $("#button").click(function(event){
       $.ajax({
         type: "GET",
-        url: "tomcat9/searchman/servlet/hello",
+        url: "tomcat9/searchman/p001_a001",
         data    : dataSample,        //リクエストJSON
         async   : true,           //true:非同期(デフォルト), false:同期
       })
