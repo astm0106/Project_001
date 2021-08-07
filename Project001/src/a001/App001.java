@@ -43,7 +43,7 @@ public class App001 extends HttpServlet {
             conn = ds.getConnection();
 
             //SQLを発行
-            pstmt = conn.prepareStatement("select  from tbl01 ");
+            pstmt = conn.prepareStatement("select  * from tbl01 ");
             //pstmt.clearParameters();
             //pstmt.setString(1, "X");
             rs = pstmt.executeQuery();
