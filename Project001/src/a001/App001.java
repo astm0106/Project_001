@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class App001
  */
-@WebServlet("/App001")
+//@WebServlet("/App001")
 public class App001 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
