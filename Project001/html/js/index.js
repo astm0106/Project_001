@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded',function(){
     var btns = document.querySelectorAll('#int_btn');
     for(var i = 0; i < btns.length; i++){
         btns[i].addEventListener('click',function(){
-            console.log(this.innerHTML);
-            int_array.push(this.innerHTML);
+
+        	var num = Number(this.innerHTML);
+            console.log(num);
+            int_array.push(num);
         },false);
     }
 },false);
