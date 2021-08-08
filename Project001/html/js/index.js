@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded',function(){
         type: "POST",
         url: "tomcat9/searchman/p001_a001",
         data    : JSON.stringify(dataSample),        // リクエストJSON
-        dataType: "json"
+        dataType: "json",
         async   : true,           // true:非同期(デフォルト), false:同期
       })
       // Ajaxリクエストが成功した場合
