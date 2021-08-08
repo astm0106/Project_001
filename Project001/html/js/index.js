@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded',function(){
       .done(function(data){
         $("#text").html(data);
         int_array = [];
-        window.open('/page003.html', "_blank");
+        //window.open('/page003.html', "_blank");
 
       })
       // Ajaxリクエストが失敗した場合
