@@ -1,66 +1,51 @@
+<!DOCTYPE html>
 <html>
   <head>
-   <meta http-equiv="content-type" charset="UTF-8">
-   <script type="text/javascript" src="app/jquery-3.6.0.min.js" charset="shift_jis"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <meta http-equiv="content-type" charset="UTF-8">
+   <script type="text/javascript" src="js/jquery-3.6.0.min.js" charset="UTF-8"></script>
+   <script type="text/javascript" src="js/index.js" charset="UTF-8"></script>
   </head>
   <body>
-    <button id="button01">指定なし</button>
-    <button id="button02">_blank</button>
-    <button id="button03">_self</button>
-    <button id="button04">_parent</button>
-    <button id="button05">_top</button>
-    
+
+　　
+　　　 <h1>手癖の分析ツール</h1>
+    <br>
     <p>
-     <select name="num_list">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-     </select>
-    </p>
-    
+    数字を無作為に入力したときに、手癖によってどれくらい数字が偏るのかを調査する
+ 	</P>
+ 	<br>
+
+	<p>ユーザー名（必須）：<br>
+	<input type="text" name="name"></p><br>
+
     <p>
-     <button id="button06">page002</button>
-     <button id="button07">page003</button>
+     <button id="int_btn">1</button>
+     <button id="int_btn">2</button>
+     <button id="int_btn">3</button>
+    <br>
+     <button id="int_btn">4</button>
+     <button id="int_btn">5</button>
+     <button id="int_btn">6</button>
+    <br>
+     <button id="int_btn">7</button>
+     <button id="int_btn">8</button>
+     <button id="int_btn">9</button>
+    <br>
+     <button id="int_btn">0</button>
     </p>
-    
+
+
+    <p>
+     <button id="fin_btn">Finish</button>
+    </p>
+
+
     <script>
-    
-    $('#button01').on('click', function() {
-      alert("指定なし");
-      window.open('/page001.html');
-    });
-    
-    $('#button02').on('click', function() {
-      alert("新規ウィンドウにドキュメントを読み込む");
-      window.open('/page001.html', "_blank");
-    });
-    
-    $('#button03').on('click', function() {
-      alert("現在のフレーム または 現在のウィンドウにドキュメントを読み込む");
-      window.open('/page001.html', "_self");
-    });
-    
-    $('#button04').on('click', function() {
-      alert("親フレームにドキュメントを読み込む");
-      window.open('/page001.html', "_parent");
-    });
-    
-    $('#button05').on('click', function() {
-      alert("フレーム分割時のトップフレームにドキュメントを読み込む" + "\n" +
-             "（フレーム分割を解除することになる）");
-      window.open('/page001.html', "_top");
-    });
-    
-    $('#button06').on('click', function() {
-      alert("page002に移動します");
-      window.open('/page002.html', "_self");
-    });
-    
-    $('#button07').on('click', function() {
-      alert("page003に移動します");
+    $('#fin_btn').on('click', function() {
+      alert("入力値を表示します");
       window.open('/page003.html', "_blank");
     });
-    
     </script>
   </body>
 </html>
