@@ -59,9 +59,13 @@ public class App001 extends HttpServlet {
             pstmt.close();
             conn.close();
 
+          //文字化け対策
+            response.setContentType("text/html; charset=UTF-8");
+
             //結果をブラウザへ
             StringBuilder sb = new StringBuilder();
             sb.append("<html><body>").append(result).append("</body></html>");
+
             PrintWriter pw = response.getWriter();
             pw.write(sb.toString());
             pw.flush();
