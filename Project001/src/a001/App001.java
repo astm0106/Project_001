@@ -54,8 +54,8 @@ public class App001 extends HttpServlet {
 				// 結果をブラウザへ
 				StringBuilder sb = new StringBuilder();
 
-				sb.append("<html><body>").append("jsonText: " + jsonText).append("</body></html>");
-
+				//sb.append("<html><body>").append("jsonText: " + jsonText).append("</body></html>");
+				sb.append("jsonText: " + jsonText);
 				PrintWriter pw = response.getWriter();
 				pw.write(sb.toString());
 				pw.flush();
