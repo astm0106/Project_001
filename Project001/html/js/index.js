@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded',function(){
     for(var i = 0; i < btns.length; i++){
         btns[i].addEventListener('click',function(){
 
-        	var num = Number(this.innerHTML);
+        	var num = this.innerHTML;
             console.log(num);
             int_array.push(num);
         },false);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       var dataSample = {
     		    user_name : str1,
-    		    array : int_array
+    		    array : int_array.toString()
     		  };
     　　　　alert(str1 + "が入力した数値: "+ int_array);
 
