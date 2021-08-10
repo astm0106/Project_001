@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
       var dataSample = {
     		    user_name : str1,
-    		    array : int_array.toString()
+    		    array : int_array.join("-")
+    		    //array : int_array.toString()
     		  };
     　　　　alert(str1 + "が入力した数値: "+ int_array);
 

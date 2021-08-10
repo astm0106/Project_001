@@ -40,7 +40,7 @@ public class App001 extends HttpServlet {
 			BufferedReader br = request.getReader();
 			String jsonText = br.readLine();
 
-			String user_name = null;
+			String user_name = JsonToValue.getValue("user_name", jsonText);
 			/**
 
 
