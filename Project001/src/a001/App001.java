@@ -37,7 +37,7 @@ public class App001 extends HttpServlet {
 
 		try {
 			// . JSON テキストを全部取り出す
-			BufferedReader br = new BufferedReader(request.getReader());
+			BufferedReader br = request.getReader();
 			String jsonText = br.readLine();
 			//jsonText = URLDecoder.decode(jsonText, "UTF-8");
 			// System.out.println( jsonText );
@@ -78,12 +78,13 @@ public class App001 extends HttpServlet {
 */
 				// 文字化け対策
 				response.setContentType("text/html; charset=UTF-8");
-
 				// 結果をブラウザへ
 				StringBuilder sb = new StringBuilder();
 //			sb.append("<html><body>").append(result).append("</body></html>");
 
 				sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
+				//sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
+
 				PrintWriter pw = response.getWriter();
 				pw.write(sb.toString());
 				pw.flush();
