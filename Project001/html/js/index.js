@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function(){
       })
       // Ajaxリクエストが成功した場合
       .done(function(data){
-        $("#text").html(data);
+        //$("#text").html(data);
         console.log(data);
         int_array = [];
         // window.open('/page003.html', "_blank");

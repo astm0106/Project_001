@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import _db.SQL001;
+
 public class App001 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -41,40 +43,17 @@ public class App001 extends HttpServlet {
 			String jsonText = br.readLine();
 
 			String user_name = JsonToValue.getValue("user_name", jsonText);
-			/**
+			String array_string = JsonToValue.getValue("array", jsonText);
+
+			SQL001.insertClickNum(user_name, array_string);
 
 
-			try {
-				Connection conn = null;
-				PreparedStatement pstmt = null;
-				ResultSet rs = null;
 
-				conn = _db.DBUtil.getConnection();
-
-				// SQLを発行
-				pstmt = conn.prepareStatement("select  * from tbl01 ");
-				// pstmt.clearParameters();
-				// pstmt.setString(1, "X");
-				rs = pstmt.executeQuery();
-
-				// 結果を取得
-				String result = null;
-				while (rs.next()) {
-					result = rs.getString("txt01");
-				}
-
-				// 後始末
-				rs.close();
-				pstmt.close();
-				conn.close();
-*/
 				// 文字化け対策
 				response.setContentType("text/html; charset=UTF-8");
 				// 結果をブラウザへ
 				StringBuilder sb = new StringBuilder();
-//			sb.append("<html><body>").append(result).append("</body></html>");
 
-				sb.append("<html><body>").append("user_name: " + user_name).append("</body></html>");
 				sb.append("<html><body>").append("jsonText: " + jsonText).append("</body></html>");
 
 				PrintWriter pw = response.getWriter();
