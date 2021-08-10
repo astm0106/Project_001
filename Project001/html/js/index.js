@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       var dataSample = {
     		    user_name : str1,
- //   		    array : int_array
+    		    array : int_array
     		  };
     　　　　alert(str1 + "が入力した数値: "+ int_array);
 
