@@ -39,9 +39,9 @@ public class App001 extends HttpServlet {
 			// . JSON テキストを全部取り出す
 			BufferedReader br = new BufferedReader(request.getReader());
 			String jsonText = br.readLine();
-			jsonText = URLDecoder.decode(jsonText, "UTF-8");
+			//jsonText = URLDecoder.decode(jsonText, "UTF-8");
 			// System.out.println( jsonText );
-
+/**
 			// . JSON オブジェクトに変換
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) parser.parse(jsonText);
@@ -75,7 +75,7 @@ public class App001 extends HttpServlet {
 				rs.close();
 				pstmt.close();
 				conn.close();
-
+*/
 				// 文字化け対策
 				response.setContentType("text/html; charset=UTF-8");
 
@@ -83,7 +83,7 @@ public class App001 extends HttpServlet {
 				StringBuilder sb = new StringBuilder();
 //			sb.append("<html><body>").append(result).append("</body></html>");
 
-				sb.append("<html><body>").append(user_name + ":" + array).append("</body></html>");
+				sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
 				PrintWriter pw = response.getWriter();
 				pw.write(sb.toString());
 				pw.flush();
@@ -91,11 +91,5 @@ public class App001 extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} catch (ParseException e1) {
-			// TODO 自動生成された catch ブロック
-			e1.printStackTrace();
-		} finally {
-
-		}
 	}
 }
