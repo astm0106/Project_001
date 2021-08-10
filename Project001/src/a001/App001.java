@@ -35,7 +35,7 @@ public class App001 extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 
-		try {
+
 			// . JSON テキストを全部取り出す
 			BufferedReader br = request.getReader();
 			String jsonText = br.readLine();
@@ -44,10 +44,18 @@ public class App001 extends HttpServlet {
 
 			// . JSON オブジェクトに変換
 			JSONParser parser = new JSONParser();
-			JSONObject jsonObj = (JSONObject) parser.parse(jsonText);
+			JSONObject jsonObj;
+			String user_name = null;
+			try {
+				jsonObj = (JSONObject) parser.parse(jsonText);
+			    user_name = (String) jsonObj.get("user_name");
+			} catch (ParseException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
 
 			// . JSON オブジェクトから特性の属性を取り出す
-			String user_name = (String) jsonObj.get("user_name");
+
 			/**
 			// 配列の取得
 			String array = (String) jsonObj.get("array");
@@ -83,14 +91,12 @@ public class App001 extends HttpServlet {
 //			sb.append("<html><body>").append(result).append("</body></html>");
 
 				sb.append("<html><body>").append("user_name: " + user_name).append("</body></html>");
-				//sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
+				sb.append("<html><body>").append("jsonText: " + jsonText).append("</body></html>");
 
 				PrintWriter pw = response.getWriter();
 				pw.write(sb.toString());
 				pw.flush();
 				pw.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+
 	}
 }
