@@ -40,7 +40,7 @@ public class App001 extends HttpServlet {
 			BufferedReader br = request.getReader();
 			String jsonText = br.readLine();
 			jsonText = URLDecoder.decode(jsonText, "UTF-8");
-			System.out.println( jsonText );
+			//System.out.println( jsonText );
 
 			// . JSON オブジェクトに変換
 			JSONParser parser = new JSONParser();
@@ -82,7 +82,7 @@ public class App001 extends HttpServlet {
 				StringBuilder sb = new StringBuilder();
 //			sb.append("<html><body>").append(result).append("</body></html>");
 
-				sb.append("<html><body>").append("user_name" + ":" + user_name).append("</body></html>");
+				sb.append("<html><body>").append("user_name: " + user_name).append("</body></html>");
 				//sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
 
 				PrintWriter pw = response.getWriter();
