@@ -11,7 +11,6 @@ public class JsonToValue {
 		String jsonKey = key;
 
 		String result = null;
-		int[] number = null;
 //		System.out.println(jsonText);
 
 		String regex_n01 = jsonKey + "\":.+?" + "(,|})";
