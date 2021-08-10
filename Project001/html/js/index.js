@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       var dataSample = {
     		    user_name : str1,
-    		    array : int_array
+ //   		    array : int_array
     		  };
     　　　　alert(str1 + "が入力した数値: "+ int_array);
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded',function(){
         type: "POST",
         url: "tomcat9/searchman/p001_a001",
         data    : JSON.stringify(dataSample),        // リクエストJSON
-        dataType: "text",
+        dataType: "json",
         async   : true,           // true:非同期(デフォルト), false:同期
       })
       // Ajaxリクエストが成功した場合

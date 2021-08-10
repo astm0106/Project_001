@@ -22,7 +22,7 @@ public class TestApp001 {
 						jsonObj = (JSONObject) parser.parse(jsonText);
 
 						// . JSON オブジェクトから特性の属性を取り出す
-						String use_name = (String) jsonObj.get("user_name");
+					String use_name = (String) jsonObj.get("user_name");
 
 						// 配列の取得
 						if (jsonObj.get("array") != null) {

@@ -39,16 +39,16 @@ public class App001 extends HttpServlet {
 			// . JSON テキストを全部取り出す
 			BufferedReader br = request.getReader();
 			String jsonText = br.readLine();
-			//jsonText = URLDecoder.decode(jsonText, "UTF-8");
-			// System.out.println( jsonText );
-/**
+			jsonText = URLDecoder.decode(jsonText, "UTF-8");
+			System.out.println( jsonText );
+
 			// . JSON オブジェクトに変換
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) parser.parse(jsonText);
 
 			// . JSON オブジェクトから特性の属性を取り出す
 			String user_name = (String) jsonObj.get("user_name");
-
+			/**
 			// 配列の取得
 			String array = (String) jsonObj.get("array");
 
@@ -82,7 +82,7 @@ public class App001 extends HttpServlet {
 				StringBuilder sb = new StringBuilder();
 //			sb.append("<html><body>").append(result).append("</body></html>");
 
-				sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
+				sb.append("<html><body>").append("user_name" + ":" + user_name).append("</body></html>");
 				//sb.append("<html><body>").append("" + ":" + jsonText).append("</body></html>");
 
 				PrintWriter pw = response.getWriter();
