@@ -1,0 +1,84 @@
+body {
+    margin: 0 auto;
+    min-height: 100vh;
+    max-height: 200vh;
+    width: 1000px;
+    display: grid;
+    grid-template:
+        "header header header " 100px
+        "left   center right  " 1fr
+        "footer footer footer " 30px
+        /300px  1fr    100px;
+}
+
+header {
+    grid-area: header;
+    outline: rgb(0, 0, 0) solid 1px;
+    background-color: pink;
+    text-align: center;
+    /* position: fixed; */
+}
+
+main {
+    grid-area: center;
+    outline: rgb(0, 0, 0) solid 1px;
+    overflow-y: scroll;
+}
+
+nav {
+    grid-area: left;
+    outline: rgb(0, 0, 0) solid 1px;
+    background-color: paleturquoise;
+    font-size: small;
+    overflow-y: scroll;
+}
+
+aside {
+    grid-area: right;
+    outline: rgb(0, 0, 0) solid 1px;
+    background-color: rgb(152, 247, 155);
+}
+
+footer {
+    grid-area: footer;
+    outline: rgb(0, 0, 0) solid 1px;
+    background-color: gray;
+}
+
+img{
+    object-fit: cover;
+    /* display: block; */
+    /* position: absolute; */
+    width: 100%;
+    height: 100px;
+    outline: rgb(0, 0, 0) solid 1px;
+  }
+
+article {
+ padding: 20px;
+}
+
+h3 {
+    margin: 0;
+}
+
+article ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        grid-template:
+            "header" 150px
+            "center" 1fr
+            "left"   minmax(30px, 1fr)
+            "right"  minmax(30px, 1fr)
+            "footer" 30px
+            /1fr
+        ;
+        width: auto;
+        min-width: 300px;
+    }
+
+}
